@@ -30,7 +30,7 @@ class RequestsResponseCallable(RequestsResponseCallable):
             return RequestsResponseCallable.status_code_200_json_addict(response=response).media_id
 
 
-class Webhook(object):
+class Api(object):
     """
     qywx webhook class
 

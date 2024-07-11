@@ -1,15 +1,15 @@
 import unittest
 
-from guolei_py3_qywx.webhook import Webhook
+from guolei_py3_qywx.webhook import Api as WebhookApi
 
 
 class MyTestCase(unittest.TestCase):
     def test_webhook(self):
-        webhook = Webhook(
+        webhook_api = WebhookApi(
             base_url="https://qyapi.weixin.qq.com/cgi-bin/webhook",
             key=""
         )
-        state = webhook.send_text(content="测试发送")
+        state = webhook_api.send_text(content="测试发送")
         if state:
             print("发送成功")
         self.assertTrue(state, "test failed")  # add assertion here
