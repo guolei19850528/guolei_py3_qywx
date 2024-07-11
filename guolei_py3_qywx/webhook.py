@@ -11,10 +11,10 @@ Github：https://github.com/guolei19850528/guolei_py3_qywx
 =================================================
 """
 
-from typing import Union, Iterable, Callable
+from typing import Iterable, Callable
 
-from guolei_py3_requests import requests_request, RequestsResponseCallable
 from addict import Dict
+from guolei_py3_requests import requests_request, RequestsResponseCallable
 from requests import Response
 
 
