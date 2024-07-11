@@ -32,9 +32,9 @@ class RequestsResponseCallable(RequestsResponseCallable):
 
 class Api(object):
     """
-    qywx webhook class
+    企业微信 群机器人 Webhook API Class
 
-    See https://developer.work.weixin.qq.com/document/path/91770
+    @See https://developer.work.weixin.qq.com/document/path/91770
     """
 
     def __init__(
@@ -45,11 +45,11 @@ class Api(object):
             mentioned_mobile_list: list = []
     ):
         """
-        See https://developer.work.weixin.qq.com/document/path/91770
+        @See https://developer.work.weixin.qq.com/document/path/91770
         :param base_url: base url https://qyapi.weixin.qq.com/cgi-bin/webhook
         :param key: key
-        :param mentioned_list: @name list
-        :param mentioned_mobile_list: @name mobile_list
+        :param mentioned_list: userid的列表，提醒群中的指定成员(@某个成员)，@all表示提醒所有人
+        :param mentioned_mobile_list: 手机号列表，提醒手机号对应的群成员(@某个成员)，@all表示提醒所有人
         """
         self._base_url = base_url
         self._key = key
