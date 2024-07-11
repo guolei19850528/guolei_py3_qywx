@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name="guolei-py3-qywx",
-    version="0.0.1",
+    version="0.0.2",
     description="a python3 qywx library by guolei",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,7 +18,9 @@ setup(
     keywors=["qywx", "weixin", "wechat", "workweixin"],
     packages=setuptools.find_packages('./'),
     install_requires=[
-        "guolei-py3-requests"
+        "guolei-py3-requests",
+        "redis",
+        "diskcache"
     ],
     python_requires='>=3.0',
     zip_safe=False
