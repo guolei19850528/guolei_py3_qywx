@@ -90,20 +90,20 @@ class Api(object):
 
     def send(
             self,
-            requests_request_json: dict = None,
+            requests_request_kwargs_json: dict = None,
             requests_response_callable: Callable = RequestsResponseCallable.status_code_200_json_addict_errcode_0_errmsg_ok,
             requests_request_args: Iterable = (),
             requests_request_kwargs: dict = {}
     ) -> bool:
         """
         send
-        :param requests_request_json:
+        :param requests_request_kwargs_json:
         :param requests_response_callable:
         :param requests_request_args:
         :param requests_request_kwargs:
         :return:
         """
-        requests_request_json = Dict(requests_request_json)
+        requests_request_kwargs_json = Dict(requests_request_kwargs_json)
         requests_request_kwargs = Dict(requests_request_kwargs)
         requests_request_kwargs = Dict({
             "url": f"{self.base_url}/send",
@@ -113,7 +113,7 @@ class Api(object):
                 **requests_request_kwargs.params,
             },
             "json": {
-                **requests_request_json,
+                **requests_request_kwargs_json,
                 **requests_request_kwargs.json
             },
             **requests_request_kwargs,
@@ -150,7 +150,7 @@ class Api(object):
         if not isinstance(mentioned_mobile_list, list):
             mentioned_mobile_list = []
         return self.send(
-            requests_request_json={
+            requests_request_kwargs_json={
                 "msgtype": "text",
                 "text": {
                     "content": content,
@@ -189,7 +189,7 @@ class Api(object):
         if not isinstance(mentioned_mobile_list, list):
             mentioned_mobile_list = []
         return self.send(
-            requests_request_json={
+            requests_request_kwargs_json={
                 "msgtype": "markdown",
                 "markdown": {
                     "content": content,
@@ -228,7 +228,7 @@ class Api(object):
         if not isinstance(mentioned_mobile_list, list):
             mentioned_mobile_list = []
         return self.send(
-            requests_request_json={
+            requests_request_kwargs_json={
                 "msgtype": "file",
                 "file": {
                     "media_id": media_id,
@@ -267,7 +267,7 @@ class Api(object):
         if not isinstance(mentioned_mobile_list, list):
             mentioned_mobile_list = []
         return self.send(
-            requests_request_json={
+            requests_request_kwargs_json={
                 "msgtype": "voice",
                 "voice": {
                     "media_id": media_id,
